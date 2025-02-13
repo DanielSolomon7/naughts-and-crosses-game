@@ -19,10 +19,7 @@ class TestCheckBoardFormat:
         input = [[[], [], []], [[], [], []], 5]
         with pytest.raises(ValueError) as e:
             check_board_format(input)
-        assert (
-            str(e.value)
-            == "ValueError: given board must be a list of 3 lists, with all 3 lists containing 3 items (which must contain either: a list, 'X', or 'O')."
-        )
+        assert str(e.value) == "ValueError: given board must be a list of 3 lists."
 
     def test_function_handles_row_without_3_lists(self):
         input = [[[], [], []], [[], [], []], [[], []]]
@@ -43,6 +40,6 @@ class TestCheckBoardFormat:
         )
 
     def test_function_identifies_correct_board(self):
-        input = [[[], "X", "O"], ["O", [], "X"], ["O", "X", []]]
+        input = [[[], "X", "O"], ["O", "X", []], ["O", [], "X"]]
         output = check_board_format(input)
         assert output == True
