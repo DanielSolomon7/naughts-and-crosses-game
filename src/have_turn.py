@@ -1,2 +1,2 @@
-def have_turn(given_board):
+def have_turn(turn, number, given_board):
     return []
