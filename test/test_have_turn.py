@@ -59,7 +59,7 @@ class TestHaveTurn:
             have_turn(input_turn, input_number, input_board)
         assert str(e.value) == "ValueError: given turn must be either 'X' or 'O'"
 
-    def test_function_handles_invalid_number_position_parameter(self):
+    def test_function_handles_invalid_position_number_type(self):
         input_turn = "O"
         input_number = "Hi"
         input_board = [[[], [], []], [[], [], []], [[], [], []]]
@@ -70,6 +70,7 @@ class TestHaveTurn:
             == "TypeError: given postion number must be an integer from 1-9."
         )
 
+    def test_function_handles_out_of_range_position_number(self):
         input_turn = "O"
         input_number = 0
         input_board = [[[], [], []], [[], [], []], [[], [], []]]
