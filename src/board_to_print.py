@@ -1,2 +1,2 @@
 def board_to_print(given_board):
-    pass
+    return str(given_board)
