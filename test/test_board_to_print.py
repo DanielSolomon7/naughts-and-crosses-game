@@ -10,11 +10,23 @@ class TestBoardToPrint:
     def test_function_returns_empty_board_as_str_in_displaying_format(self):
         input = [[[], [], []], [[], [], []], [[], [], []]]
         expected = """   
-   |  |  
-----------
-   |  |  
-----------
-   |  |   
+   |   |  
+-----------
+   |   |  
+-----------
+   |   |   
+"""
+        output = board_to_print(input)
+        assert output == expected
+
+    def test_function_returns_filled_board_as_str_in_displaying_format(self):
+        input = [["X", "O", "X"], ["O", "O", "X"], ["X", "X", "O"]]
+        expected = """   
+ X | O | X 
+-----------
+ O | O | X 
+-----------
+ X | X | O  
 """
         output = board_to_print(input)
         assert output == expected
