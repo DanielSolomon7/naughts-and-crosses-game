@@ -30,3 +30,15 @@ class TestBoardToPrint:
 """
         output = board_to_print(input)
         assert output == expected
+
+    def test_function_returns_partly_filled_board_as_str_in_displaying_format(self):
+        input = [["X", [], "X"], [[], "O", []], ["X", "O", []]]
+        expected = """   
+ X |   | X 
+-----------
+   | O |   
+-----------
+ X | O |   
+"""
+        output = board_to_print(input)
+        assert output == expected
