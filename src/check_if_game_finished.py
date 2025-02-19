@@ -2,8 +2,8 @@ def check_if_game_finished(given_board):
     cross = "X"
     naught = "O"
 
-    # Check rows
     for i in range(3):
+        # Check rows
         if (
             given_board[i][0] == cross
             and given_board[i][1] == cross
