@@ -2,7 +2,7 @@ def check_if_game_finished(given_board):
     cross = "X"
     naught = "O"
 
-    """Check rows"""
+    # Check rows
     for i in range(3):
         if (
             given_board[i][0] == cross
@@ -17,8 +17,7 @@ def check_if_game_finished(given_board):
         ):
             return True
 
-    """Check columns"""
-    for i in range(3):
+        # Check columns
         if (
             given_board[0][i] == cross
             and given_board[1][i] == cross
@@ -32,7 +31,7 @@ def check_if_game_finished(given_board):
         ):
             return True
 
-    """Check diagonal left to right"""
+    # Check diagonal left to right
     if (
         given_board[0][0] == cross
         and given_board[1][1] == cross
@@ -46,7 +45,7 @@ def check_if_game_finished(given_board):
     ):
         return True
 
-    """Check diagonal right to left"""
+    # Check diagonal right to left
     if (
         given_board[0][2] == cross
         and given_board[1][1] == cross
