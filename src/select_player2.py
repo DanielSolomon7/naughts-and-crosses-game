@@ -1,9 +1,7 @@
-def select_player(player1_input):
+def select_player2(player1_input):
     if player1_input == "O":
-        player2 = "X"
+        return "X"
     elif player1_input == "X":
-        player2 = "O"
+        return "O"
     else:
         raise TypeError("TypeError: given input must be either 'O' or 'X'.")
-
-    return {"Player 1": player1_input, "Player 2": player2}
