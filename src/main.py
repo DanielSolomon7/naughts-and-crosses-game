@@ -7,6 +7,7 @@ from src.select_player2 import select_player2
 def naughts_and_crosses():
     board = get_board()
     if check_board_format(board) == True:
+        # Select Players
         players_selected = False
         while not players_selected:
             player1 = input("Player 1 - Please choose 'O' or 'X':")
@@ -17,6 +18,7 @@ def naughts_and_crosses():
                 players_selected = True
                 print(f"Player 1 is {player1}, and Player 2 is {player2}.")
 
+        # Start Game
         game_finished = False
         while not game_finished:
             game_finished = True
