@@ -41,7 +41,6 @@ def naughts_and_crosses():
 
             board = have_turn(player_turn, turn_number, board)
 
-
             print(board_to_print(board))
             print(f"Player {player_turn} selected postion {turn_number} on the board.")
 
