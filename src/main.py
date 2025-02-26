@@ -2,6 +2,7 @@ from src.get_board import get_board
 from src.check_board_format import check_board_format
 from src.check_if_naught_or_cross import check_if_naught_or_cross
 from src.select_player2 import select_player2
+from switch_player import switch_player
 from src.board_to_print import board_to_print
 from src.selection_board import selection_board
 from src.have_turn import have_turn
@@ -26,10 +27,12 @@ def naughts_and_crosses():
         game_finished = False
         player_turn = player2
         while not game_finished:
-            if player_turn == player1:
-                player_turn = player2
-            else:
-                player_turn = player1
+            player_turn = switch_player(player_turn)
+
+            # if player_turn == player1:
+            #     player_turn = player2
+            # else:
+            #     player_turn = player1
 
             print(board_to_print(board))
             print(selection_board(board))
