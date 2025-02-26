@@ -10,7 +10,7 @@ from src.check_if_game_finished import check_if_game_finished
 
 def naughts_and_crosses():
     board = get_board()
-    if check_board_format(board) == True:
+    if check_board_format(board):
         # Select Players
         players_selected = False
         while not players_selected:
@@ -40,6 +40,7 @@ def naughts_and_crosses():
 
             game_finished = check_if_game_finished(board)
         
+        # Finish Game
         print(f"Player {player_turn} wins!!!")
 
 
