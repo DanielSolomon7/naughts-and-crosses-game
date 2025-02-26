@@ -5,6 +5,7 @@ from src.select_player2 import select_player2
 from src.board_to_print import board_to_print
 from src.selection_board import selection_board
 from src.have_turn import have_turn
+from src.check_if_game_finished import check_if_game_finished
 
 
 def naughts_and_crosses():
@@ -37,7 +38,9 @@ def naughts_and_crosses():
             print(board_to_print(board))
             print(f"Player {player_turn} selected postion {turn_number} on the board.")
 
-            game_finished = True
+            game_finished = check_if_game_finished(board)
+        
+        print(f"Player {player_turn} wins!!!")
 
 
 naughts_and_crosses()
