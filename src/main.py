@@ -29,17 +29,19 @@ def naughts_and_crosses():
         while not game_finished:
             player_turn = switch_player(player_turn)
 
-            # if player_turn == player1:
-            #     player_turn = player2
-            # else:
-            #     player_turn = player1
-
             print(board_to_print(board))
             print(selection_board(board))
-            turn_number = int(
-                input(f"Player {player_turn} - Select position on the board (1-9):")
-            )
+
+            valid_number = False
+            while not valid_number:
+                turn_number = int(
+                    input(f"Player {player_turn} - Select position on the board (1-9):")
+                )
+                valid_number = True
+
             board = have_turn(player_turn, turn_number, board)
+
+
             print(board_to_print(board))
             print(f"Player {player_turn} selected postion {turn_number} on the board.")
 
