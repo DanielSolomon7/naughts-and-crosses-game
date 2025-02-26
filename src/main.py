@@ -5,6 +5,7 @@ from src.select_player2 import select_player2
 from switch_player import switch_player
 from src.board_to_print import board_to_print
 from src.selection_board import selection_board
+from src.check_if_valid_number import check_if_valid_number
 from src.have_turn import have_turn
 from src.check_if_game_finished import check_if_game_finished
 
@@ -37,9 +38,11 @@ def naughts_and_crosses():
                 turn_number = int(
                     input(f"Player {player_turn} - Select position on the board (1-9):")
                 )
-                valid_number = True
+                valid_number = check_if_valid_number(turn_number)
+                if not valid_number:
+                    print("Invalid number given. Please enter a number from 1-9.")
 
-            board = have_turn(player_turn, turn_number, board)
+            board = have_turn(player_turn, int(turn_number), board)
 
             print(board_to_print(board))
             print(f"Player {player_turn} selected postion {turn_number} on the board.")
