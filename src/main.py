@@ -33,13 +33,15 @@ def naughts_and_crosses():
 
             print(board_to_print(board))
             print(selection_board(board))
-            turn_number = int(input(f"Player {player_turn} - Select position on the board (1-9):"))
+            turn_number = int(
+                input(f"Player {player_turn} - Select position on the board (1-9):")
+            )
             board = have_turn(player_turn, turn_number, board)
             print(board_to_print(board))
             print(f"Player {player_turn} selected postion {turn_number} on the board.")
 
             game_finished = check_if_game_finished(board)
-        
+
         # Finish Game
         print(f"Player {player_turn} wins!!!")
 
