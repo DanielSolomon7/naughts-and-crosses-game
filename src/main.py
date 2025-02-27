@@ -35,17 +35,12 @@ def naughts_and_crosses():
 
             valid_number = False
             while not valid_number:
-                try:
-                    turn_number = int(
-                        input(
-                            f"Player {player_turn} - Select position on the board (1-9):"
-                        )
-                    )
-                    valid_number = check_if_valid_number(turn_number)
-                    if not valid_number:
-                        print("Invalid number given. Please enter an integer from 1-9.")
-                except ValueError:
-                    print("Invalid type given. Please enter an integer from 1-9.")
+                turn_number = input(
+                    f"Player {player_turn} - Select position on the board (1-9):"
+                )
+                valid_number = check_if_valid_number(turn_number)
+                if not valid_number:
+                    print("Invalid input given. Please enter an integer from 1-9.")
 
             board = have_turn(player_turn, int(turn_number), board)
 
