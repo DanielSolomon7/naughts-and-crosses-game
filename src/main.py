@@ -7,13 +7,14 @@ from src.board_to_print import board_to_print
 from src.selection_board import selection_board
 from src.check_if_valid_number import check_if_valid_number
 from src.have_turn import have_turn
+from src.check_if_position_taken import check_if_position_taken
 from src.check_if_game_finished import check_if_game_finished
 
 
 def naughts_and_crosses():
     board = get_board()
     if check_board_format(board):
-        # Select Players
+        # Select players
         players_selected = False
         while not players_selected:
             player1 = input("Player 1 - Please choose 'O' or 'X':")
@@ -24,7 +25,7 @@ def naughts_and_crosses():
                 players_selected = True
                 print(f"Player 1 is {player1}, and Player 2 is {player2}.")
 
-        # Start Game
+        # Start game
         game_finished = False
         player_turn = player2
         while not game_finished:
@@ -35,21 +36,30 @@ def naughts_and_crosses():
 
             valid_number = False
             while not valid_number:
+                # Allow player to choose position on the board
                 turn_number = input(
                     f"Player {player_turn} - Select position on the board (1-9):"
                 )
+                # Check if valid position number is given
                 valid_number = check_if_valid_number(turn_number)
                 if not valid_number:
                     print("Invalid input given. Please enter an integer from 1-9.")
 
+                # Check if board position is already taken
+                valid_number = not check_if_position_taken(int(turn_number), board)
+                if not valid_number:
+                    print("Position number already taken. Please try again.")
+
+            # Place player input on the board
             board = have_turn(player_turn, int(turn_number), board)
 
             print(board_to_print(board))
             print(f"Player {player_turn} selected postion {turn_number} on the board.")
 
+            # Check if the game is finished
             game_finished = check_if_game_finished(board)
 
-        # Finish Game
+        # Finish game
         print(f"Player {player_turn} wins!!!")
 
 
