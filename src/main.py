@@ -9,6 +9,7 @@ from src.check_if_valid_number import check_if_valid_number
 from src.have_turn import have_turn
 from src.check_if_position_taken import check_if_position_taken
 from src.check_if_game_finished import check_if_game_finished
+from src.check_if_draw import check_if_draw
 
 
 def naughts_and_crosses():
@@ -27,8 +28,10 @@ def naughts_and_crosses():
 
         # Start game
         game_finished = False
+        game_won = False
+        game_draw = False
         player_turn = player2
-        while not game_finished:
+        while not game_finished:  # or not game_draw:
             player_turn = switch_player(player_turn)
 
             print(board_to_print(board))
@@ -59,11 +62,18 @@ def naughts_and_crosses():
 
             # Check if the game is finished
             game_finished = check_if_game_finished(board)
+            game_won = game_finished
 
             # Check if the game is a draw
+            if not game_finished:
+                game_draw = check_if_draw(board)
+                game_finished = game_draw
 
         # Finish game
-        print(f"Player {player_turn} wins!!!")
+        if game_won:
+            print(f"Player {player_turn} wins!!!")
+        elif game_draw:
+            print("Game is a draw!")
 
 
 naughts_and_crosses()
