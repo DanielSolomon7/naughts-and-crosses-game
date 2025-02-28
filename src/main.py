@@ -60,9 +60,7 @@ def naughts_and_crosses():
             # Check if the game is finished
             game_finished = check_if_game_finished(board)
 
-
             # Check if the game is a draw
-            
 
         # Finish game
         print(f"Player {player_turn} wins!!!")
