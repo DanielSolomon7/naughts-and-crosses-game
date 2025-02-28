@@ -46,9 +46,10 @@ def naughts_and_crosses():
                     print("Invalid input given. Please enter an integer from 1-9.")
 
                 # Check if board position is already taken
-                valid_number = not check_if_position_taken(int(turn_number), board)
-                if not valid_number:
-                    print("Position number already taken. Please try again.")
+                else:
+                    valid_number = not check_if_position_taken(int(turn_number), board)
+                    if not valid_number:
+                        print("Position number already taken. Please try again.")
 
             # Place player input on the board
             board = have_turn(player_turn, int(turn_number), board)
