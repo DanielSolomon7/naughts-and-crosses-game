@@ -31,7 +31,7 @@ def naughts_and_crosses():
         game_won = False
         game_draw = False
         player_turn = player2
-        while not game_finished:  # or not game_draw:
+        while not game_finished:
             player_turn = switch_player(player_turn)
 
             print(board_to_print(board))
