@@ -6,7 +6,7 @@ def select_player2(player1_input):
         player1_input: given input, which should be a string of "O" or "X"
 
     Returns:
-        string: a string of player 2, whether "O" or "X"
+        string: a string of player 2, either "O" or "X"
     """
     if player1_input == "O":
         return "X"
