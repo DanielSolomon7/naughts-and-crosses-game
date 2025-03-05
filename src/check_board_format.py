@@ -1,4 +1,13 @@
 def check_board_format(given_board):
+    """Checks if a naughts and crosses board is a
+    valid fomat
+
+    Args:
+        given_board: a list of 3 lists (each list with a length of 3)
+
+    Returns:
+        boolean: returns True if a valid format
+    """
     if not isinstance(given_board, list):
         raise TypeError("TypeError: given board must be a list.")
     if len(given_board) != 3:
