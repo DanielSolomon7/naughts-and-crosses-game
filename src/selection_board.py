@@ -2,6 +2,16 @@ from copy import deepcopy
 
 
 def selection_board(given_board):
+    """Returns a selection format of a naughts and crosses
+    board as a string, which shows the availble board
+    position numbers
+
+    Args:
+        given_board: a list of 3 lists (each list with a length of 3)
+
+    Returns:
+        string: a selection format of the board
+    """
     board_copy = deepcopy(given_board)
     counter = 0
     row_num = 0
