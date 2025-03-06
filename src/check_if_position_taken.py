@@ -1,4 +1,14 @@
 def check_if_position_taken(position_num, given_board):
+    """Checks if a board postion has already been taken
+
+    Args:
+        postion_num (int): a position number for the board (should be from 1-9)
+        given_board (list): a list of 3 lists (each list with a length of 3)
+
+    Returns:
+        boolean: returns True if position is taken,
+                 returns False if position is not taken
+    """
     if not isinstance(position_num, int):
         raise TypeError("TypeError: given postion number must be an integer from 1-9.")
     if position_num < 1 or position_num > 9:
