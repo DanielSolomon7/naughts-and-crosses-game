@@ -1,4 +1,13 @@
 def check_if_game_finished(given_board):
+    """Checks if a naughts and crosses game has been won
+
+    Args:
+        given_board: a list of 3 lists (each list with a length of 3)
+
+    Returns:
+        boolean: returns True if game has been won,
+                 returns False if game has not been won
+    """
     cross = "X"
     naught = "O"
 
