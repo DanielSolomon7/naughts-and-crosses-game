@@ -16,7 +16,7 @@ Clone the repository:
 
 
 ## Usage
-To run the project, use the following command:
+To play the game, use the following command:
 ```bash
 python src/main.py
 ```
