@@ -13,10 +13,14 @@ Clone the repository:
 ```
 
 ## Setup
-
+Inside the project directory (naughts-and-crosses-game), export the PYTHONPATH to the current working directory:
+```bash
+export PYTHONPATH=$(pwd)
+```
 
 ## Usage
 To play the game, use the following command:
 ```bash
 python src/main.py
 ```
+Then follow the game instructions in the command line.
