@@ -2,7 +2,7 @@ from src.get_board import get_board
 from src.check_board_format import check_board_format
 from src.check_if_naught_or_cross import check_if_naught_or_cross
 from src.select_player2 import select_player2
-from switch_player import switch_player
+from src.switch_player import switch_player
 from src.board_to_print import board_to_print
 from src.selection_board import selection_board
 from src.check_if_valid_number import check_if_valid_number
